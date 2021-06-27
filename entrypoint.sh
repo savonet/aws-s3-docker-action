@@ -18,12 +18,7 @@ mkdir -p ~/.aws
 echo -e "[default]\naws_access_key_id=${AWS_ACCESS_KEY_ID}\naws_secret_access_key=${AWS_SECRET_ACCESS_KEY}" >~/.aws/credentials
 echo -e "[default]\nregion=us-east-1\noutput=json" >~/.aws/config
 
-FLAGS=""
-if [ -z "${WITH_DELETE}" ]; then
-  FLAGS="${FLAGS} --delete"
-fi
-
-aws s3 sync ${SOURCE} ${TARGET} ${FLAGS}
+aws s3 sync ${SOURCE} ${TARGET}
 
 if [ -n "${WITH_CLOUD_FRONT_INVALIDATION}" ]; then
   if [ -z "${AWS_CLOUDFRONT_DISTRIBUTION_ID}" ]; then
