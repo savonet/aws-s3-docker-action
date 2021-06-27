@@ -21,10 +21,6 @@ inputs:
     description: Target in the copying
     required: true
 
-  WITH_DELETE:
-    description: If defined the s3 sync is executed with the --delete flag
-    required: false
-
   WITH_CLOUD_FRONT_INVALIDATION:
     description: If defined a cloudfront invalidation will be executed
     required: false
@@ -43,11 +39,8 @@ runs:
   args:
     - ${{ inputs.AWS_ACCESS_KEY_ID }}
     - ${{ inputs.AWS_SECRET_ACCESS_KEY }}
-    - ${{ inputs.AWS_REGION }}
-    - ${{ inputs.AWS_BUCKET_NAME }}
     - ${{ inputs.SOURCE }}
     - ${{ inputs.TARGET }}
-    - ${{ inputs.WITH_DELETE }}
     - ${{ inputs.WITH_CLOUD_FRONT_INVALIDATION }}
     - ${{ inputs.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
     - ${{ inputs.AWS_CLOUDFRONT_INVALIDATION_PATH }}
