@@ -12,11 +12,6 @@ if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
   exit 1
 fi
 
-if [ -z "$AWS_BUCKET_NAME" ]; then
-  echo "AWS_BUCKET_NAME is not set"
-  exit 1
-fi
-
 echo "Starting..."
 
 mkdir -p ~/.aws
