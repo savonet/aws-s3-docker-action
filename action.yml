@@ -13,21 +13,12 @@ inputs:
     description: AWS SECRET KEY
     required: true
 
-  AWS_REGION:
-    description: AWS REGION
-    required: true
-    default: us-west-2
-
-  AWS_BUCKET_NAME:
-    description: Name of the bucket
-    required: true
-
   SOURCE:
     description: Source of copying
     required: true
 
   TARGET:
-    description: Target in the AWS S3
+    description: Target in the copying
     required: true
 
   WITH_DELETE:
